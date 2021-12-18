@@ -1,0 +1,29 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box {
+  width: 50%;
+  height: 50vh;
+  overflow: auto;
+}
+
+.colorBox {
+  @extend .box;
+  border: 2px solid white;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 7rem;
+  color: white;
+}
+
+.descClass {
+  @extend .box;
+  font-size: 0.875rem;
+  padding: 1rem;
+}
