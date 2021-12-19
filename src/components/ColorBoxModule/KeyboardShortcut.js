@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, memo} from 'react';
 
-const KeyboardShortcut = ({className, metaInfo = {}, listener}) => {
+const KeyboardShortcut = ({className, handleShortcutTrigger, metaInfo = {}, listener}) => {
     const {
         label,
         colorChoice = [],
@@ -8,7 +8,13 @@ const KeyboardShortcut = ({className, metaInfo = {}, listener}) => {
     } = metaInfo;
     const [bgColorIndex, setBgColorIndex] = useState(0);
     useEffect(() => {
-        listener.simple_combo(combo, () => setBgColorIndex(prevState => ((prevState + 1) % colorChoice.length)));
+        listener.simple_combo(combo, () => {
+            setBgColorIndex(prevState => ((prevState + 1) % colorChoice.length));
+            handleShortcutTrigger({combo});
+        });
+        return () => {
+            listener.unregister_combo(combo)
+        }
     }, [combo, colorChoice.length, listener])
     return (
         <div style={{backgroundColor: colorChoice[bgColorIndex]}} className={className}>
@@ -17,4 +23,4 @@ const KeyboardShortcut = ({className, metaInfo = {}, listener}) => {
     );
 };
 
-export default KeyboardShortcut;
+export default memo(KeyboardShortcut);

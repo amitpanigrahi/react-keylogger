@@ -7,12 +7,14 @@ import ColorBoxThemeContext from "../../contexts/ColorBoxThemeContext";
 
 const ColorBoxModule = () => {
     const {
-        listener
+        listener,
+        handleShortcutTrigger,
+        activeShortcuts
     } = useContext(ColorBoxThemeContext);
     return (
         <div className={s.container}>
-            {COMPONENT_META_MAPPING.map((metaInfo, i) => <KeyboardShortcut listener={listener} key={i} className={s.colorBox} metaInfo={metaInfo} />)}
-            <ActiveShortcutsBox metaInfomap={COMPONENT_META_MAPPING} />
+            {COMPONENT_META_MAPPING.map((metaInfo, i) => <KeyboardShortcut listener={listener} handleShortcutTrigger={handleShortcutTrigger} key={i} className={s.colorBox} metaInfo={metaInfo} />)}
+            <ActiveShortcutsBox activeShortcuts={activeShortcuts} metaInfomap={COMPONENT_META_MAPPING} />
         </div>
     );
 };
