@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/react_key_logger/static/css/main.350de590.css",
-    "main.js": "/react_key_logger/static/js/main.f6c53128.js",
-    "index.html": "/react_key_logger/index.html",
-    "main.350de590.css.map": "/react_key_logger/static/css/main.350de590.css.map",
-    "main.f6c53128.js.map": "/react_key_logger/static/js/main.f6c53128.js.map"
+    "main.css": "/react-keylogger/static/css/main.350de590.css",
+    "main.js": "/react-keylogger/static/js/main.f6c53128.js",
+    "index.html": "/react-keylogger/index.html",
+    "main.350de590.css.map": "/react-keylogger/static/css/main.350de590.css.map",
+    "main.f6c53128.js.map": "/react-keylogger/static/js/main.f6c53128.js.map"
   },
   "entrypoints": [
     "static/css/main.350de590.css",
